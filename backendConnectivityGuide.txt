@@ -1,0 +1,70 @@
+1)first create a folder and then run cmd and write code . to open visual code .
+2)run npm init it wil create package.json file for index.js
+3)ab index.js ki file bana len agar koi dusre naam se banayi hai to package.json me jakar entry point ko us file k sath chnage karden 
+4)npm i express mongoose dotenv
+5)npm i -g nodemon 
+6) ab nodemon ko chalane k lye script me ye do key values bhi add karni hogi 
+  "start": "node server.js", 
+    "dev": "nodemon server.js"
+so that nodemon can run
+
+
+7) now connect mongodb by giving username and password
+
+username:shobii
+password:********
+
+8)My local environment
+create ip addresss so that wohi ip address access kare
+
+9) Now click Connect and copy const uri
+10) now make .env file ad write PORT=portnumber of you choice exp: 5000, in next line write MONGO_URL="paste the whole thing copied from atlas mongodb and <Here write the password without ankle brackets> this line must contain not quotation marks"
+11) npm i mongodb
+
+12)write this in main entry point exp : server.js file 
+
+require("dotenv").config();
+
+mongoose.connect(process.env.MONGO_URL).then(() => {
+    app.listen(process.env.PORT, () => {
+      console.log("Database Connected Successfully");
+    });
+  }).catch((err) => {
+    console.log(err);
+  });
+
+
+
+---------------------BoilerPlate ends-----------------------------------------------------
+
+Now Rest Api creating..
+
+
+=> For creating an Api , First create schema and model. Schema is actually defing that which is going to be fields/attributes for spesific entity. Then merge scheme with entity name , Model is created. That model is going to use an interface to communicate
+
+13) Create a folder named model as there could be many models.
+14)create a folder named router as there could be many routes for api accessing
+15) Create a file name studentModel.js in model  folder and also create a studentRouter.js in routes folder
+16) studentModel.js me schema bana kar model me merger kar k naam dena hai exp: student ab database me is naam se collection banega.
+17) Export this Model so studentRouter can use it .
+18) Configure studentRouter with Apis so we just huve to call from our entry point 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
